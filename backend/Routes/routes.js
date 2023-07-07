@@ -1,11 +1,13 @@
 const { Router }  = require('express');
+const { getData } = require('../database');
 
 const router = Router();
 
 let arr = ['Hello','world'];
 
-router.get('/',(req,res)=>{
-    res.send(arr);
+router.get('/',async (req,res)=>{
+    const data = await getData(); 
+    res.send(data);
 });
 
 router.post('/',(req,res)=>{

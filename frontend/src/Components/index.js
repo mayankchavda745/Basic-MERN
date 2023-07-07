@@ -9,7 +9,7 @@ const Index = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://192.168.1.4:5000');
+      const response = await fetch('http://localhost:5000');
       const json = await response.json();
       setData(json);
     } catch (error) {
@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <>
     <h1>hello</h1>
-    {data && data.map((d,i)=><div key={i}>{d}</div>)}
+    {data && data.map((d,i)=><div key={i}>{d.Id} || {d.name}</div>)}
     </>
   )
 }

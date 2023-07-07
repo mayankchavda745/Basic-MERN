@@ -2,7 +2,7 @@ const { Router }  = require('express');
 
 const router = Router();
 
-let arr = [];
+let arr = ['Hello','world'];
 
 router.get('/',(req,res)=>{
     res.send(arr);
